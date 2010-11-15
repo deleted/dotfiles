@@ -14,6 +14,7 @@ bindkey -e
 
 alias lsports="lsof -i -P"
 
+path+=/Users/ted/apps/android/tools
 path+=/opt/local/sbin/
 path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
 path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
