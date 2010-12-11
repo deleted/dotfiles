@@ -6,10 +6,7 @@ set shiftwidth=4
 set ignorecase
 
 set listchars=eol:$,tab:->,trail:.,
-"colorscheme elflord
-"colorscheme ir_black
 colorscheme elflord
-set guifont=Monaco:h12
 
 " Key mappings to quickly maximize windows
 map <C-J> <C-W>j<C-W>_
