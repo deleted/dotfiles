@@ -2,7 +2,8 @@
 setopt nobeep
 setopt autocd
 setopt PROMPT_SUBST
-export PS1="%m:%~>"
+#export PS1="%m:%~>"
+export PS1="%~>"
 
 #History
 setopt SHARE_HISTORY
@@ -13,12 +14,13 @@ HISTFILE=~/.history
 bindkey -e
 
 alias lsports="lsof -i -P"
+alias wgit="wget --no-check-certificate"
 
 path+=/Users/ted/apps/android/tools
-path+=/opt/local/sbin/
 path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
 path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
+export PATH=$HOME/local/bin:/usr/local/bin:$PATH
 export path
 export EDITOR=vim
 export EC2_HOME=$HOME/src/ec2-api-tools-1.3-30349
