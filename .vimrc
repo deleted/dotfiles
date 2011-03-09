@@ -22,3 +22,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <F5> :GundoToggle<CR>
+
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+nnoremap <F3> :TlistToggle<CR>
