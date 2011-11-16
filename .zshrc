@@ -3,7 +3,7 @@ setopt nobeep
 setopt autocd
 setopt PROMPT_SUBST
 #export PS1="%m:%~>"
-export PS1="%~>"
+export PS1="z|%~>"
 
 #History
 setopt SHARE_HISTORY
