@@ -1,3 +1,5 @@
+umask 002
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -59,6 +61,9 @@ alias lsports="lsof -i -P"
 alias wgit="wget --no-check-certificate"
 alias sshwwt="ssh -XC escharff@wow.arc.nasa.gov -t ssh -XC ted@198.10.124.5"
 
+# Autocorrect Exceptions
+alias ack="nocorrect ack"
+
 #path+=/Users/ted/apps/android/tools
 path+=/Users/ted/android
 path+=/Users/ted/android/tools
@@ -82,3 +87,16 @@ source $HOME/.eucalyptus/eucarc
 
 export PYTHONPATH=/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
