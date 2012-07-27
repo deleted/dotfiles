@@ -18,6 +18,8 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_ 
 
 au BufReadCmd *.kmz call zip#Browse(expand("<amatch>")) " open kmz as zip files
+au BufRead,BufNewFile *.pde set filetype=arduino
+au FileType arduino setl sw=2 sts=2 et
 
 " After shifting a visual block, select it again
 vnoremap < <gv
@@ -27,3 +29,4 @@ nnoremap <F5> :GundoToggle<CR>
 
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 nnoremap <F3> :TlistToggle<CR>
+

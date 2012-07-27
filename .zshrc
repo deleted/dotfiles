@@ -59,6 +59,8 @@ bindkey \^S history-incremental-search-forward
 
 alias lsports="lsof -i -P"
 alias wgit="wget --no-check-certificate"
+alias push="git push origin master"
+alias pull="git pull --rebase origin master"
 alias sshwwt="ssh -XC escharff@wow.arc.nasa.gov -t ssh -XC ted@198.10.124.5"
 
 # Autocorrect Exceptions

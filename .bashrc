@@ -8,7 +8,7 @@
 #
 # Written by John Zaitseff and released into the public domain.
 
-umask 022
+umask 002
 
 shopt -s checkwinsize expand_aliases
 set -P
