@@ -7,6 +7,8 @@ set autoindent
 
 set ignorecase
 
+set wildignore=*.o,*~,*.pyc,*.swp,*.swo
+
 set listchars=eol:$,tab:->,trail:.,
 colorscheme elflord
 
