@@ -33,7 +33,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode brew github python django)
 
-source $ZSH/oh-my-zsh.sh
+[[ -d $ZSH ]] && source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #Basic UI
