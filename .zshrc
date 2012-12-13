@@ -39,12 +39,22 @@ source $ZSH/oh-my-zsh.sh
 #Basic UI
 setopt nobeep
 setopt autocd
+
+#Prompt Stuff
 setopt PROMPT_SUBST
 #export PS1="%m:%~>"
 export PS1="z|%~>"
+# Prompt themes!
+#autoload -U promptinit
+#promptinit
+#autoload -U colors; colors
+#export PS1="${fg[green]%}%~%{$reset_color%}>"
 
 #History
-setopt SHARE_HISTORY
+
+#setopt SHARE_HISTORY
+setopt no_sharehistory
+setopt inc_append_history
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
@@ -52,6 +62,7 @@ HISTFILE=~/.history
 #bindkey -e  # emacs
 bindkey -v  # vi defaults
 bindkey \^U backward-kill-line  # ctrl-u deletes from cursor to start of line
+bindkey \^W backward-kill-word  
 bindkey \^A beginning-of-line
 bindkey \^E end-of-line
 bindkey \^R history-incremental-search-backward
@@ -65,6 +76,8 @@ alias sshwwt="ssh -XC escharff@wow.arc.nasa.gov -t ssh -XC ted@198.10.124.5"
 
 # Autocorrect Exceptions
 alias ack="nocorrect ack"
+alias git="nocorrect git"
+unsetopt correct_all # just disable all of them.  this feature is kind of annoying
 
 #path+=/Users/ted/apps/android/tools
 path+=/Users/ted/android
@@ -85,7 +98,7 @@ for jar in $HOME/android/tools/lib/*jar
     do CLASSPATH+=:$jar
 done
 
-source $HOME/.eucalyptus/eucarc
+#source $HOME/.eucalyptus/eucarc # was for nebula
 
 export PYTHONPATH=/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
