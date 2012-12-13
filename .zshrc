@@ -3,6 +3,9 @@ umask 002
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Base of the android install
+ANDROID=$HOME/android
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -33,7 +36,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode brew github python django)
 
-[[ -d $ZSH ]] && source $ZSH/oh-my-zsh.sh
+[[ -e $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #Basic UI
@@ -80,9 +83,9 @@ alias git="nocorrect git"
 unsetopt correct_all # just disable all of them.  this feature is kind of annoying
 
 #path+=/Users/ted/apps/android/tools
-path+=/Users/ted/android
-path+=/Users/ted/android/tools
-path+=/Users/ted/android/platform-tools
+path+=$ANDROID
+path+=$ANDROID/tools
+path+=$ANDROID/platform-tools
 path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
 path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
@@ -94,9 +97,12 @@ export EC2_HOME=$HOME/src/ec2-api-tools-1.3-30349
 export EC2_AMITOOL_HOME=$HOME/src/ec2-ami-tools-1.3-26357
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export CLASSPATH=$HOME/android/lib:.
-for jar in $HOME/android/tools/lib/*jar
-    do CLASSPATH+=:$jar
-done
+
+if [[ -d $ANDROID/tools ]]; then
+    for jar in $ANDROID/tools/lib/*jar
+        do CLASSPATH+=:$jar
+    done
+fi
 
 #source $HOME/.eucalyptus/eucarc # was for nebula
 
