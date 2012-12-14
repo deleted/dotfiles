@@ -9,29 +9,6 @@
 255.255.255.255	broadcasthost
 ::1             localhost
 fe80::1%lo0	localhost
-208.87.118.112	nebula12.arc.nasa.gov nebula12
-10.128.14.4   postgres.nebula
-#10.128.169.3  couchdb.nebula
-10.128.14.8  couchdb.nebula
-208.87.118.189  wwt-restore
-
-#127.0.0.1	files.nasanebula.net nasanebula
-10.255.24.11    nebula-dashboard    # requires VPN
-###
-# Nebula VMs
-###
-198.10.124.49   wwt-web1
-198.10.124.50   wwt-web2
-
-198.10.124.5    wwt10one wwt
-198.10.124.54   wwt4one
-198.10.124.55   wwt5one
-198.10.124.56   wwt6one
-198.10.124.57   wwt7one
-198.10.124.58   wwt8one
-198.10.124.59   wwt9one
-198.10.124.61   wwt11one
-198.10.124.62   wwt12one
 
 # My Linode Server
 173.230.145.33 hertzdonut
