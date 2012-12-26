@@ -90,6 +90,7 @@ path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
 path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 path+=/Users/ted/local/gsutil
+[[-e /usr/local/lib/wxPython/bin]] && path+=/usr/local/lib/wxPython/bin
 export PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
 export path
 export EDITOR=vim
@@ -106,7 +107,8 @@ fi
 
 #source $HOME/.eucalyptus/eucarc # was for nebula
 
-export PYTHONPATH=/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH
+[[ -e /Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages ]] && export PYTHONPATH="/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH"
+[[ -e /usr/local/lib/python2.7 ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # pip zsh completion start
