@@ -53,6 +53,11 @@ export PS1="z|%~>"
 #autoload -U colors; colors
 #export PS1="${fg[green]%}%~%{$reset_color%}>"
 
+# Edit the comand line by hitting esc-v
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 #History
 
 #setopt SHARE_HISTORY
