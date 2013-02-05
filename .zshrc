@@ -87,16 +87,19 @@ alias ack="nocorrect ack"
 alias git="nocorrect git"
 unsetopt correct_all # just disable all of them.  this feature is kind of annoying
 
-#path+=/Users/ted/apps/android/tools
+# All things pathy
 path+=$ANDROID
 path+=$ANDROID/tools
 path+=$ANDROID/platform-tools
-path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
-path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
+path+=$HOME/src/ec2-api-tools-1.3-30349/bin
+path+=$HOME/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
-path+=/Users/ted/local/gsutil
-[[ -e /usr/local/lib/wxPython/bin ]] && path+=/usr/local/lib/wxPython/bin
-export PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
+path+=$HOME/local/gsutil
+path+=/usr/local/lib/wxPython/bin
+PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
+path=($^path(-/N)) # filter out any paths that don't exists, or aren't directories/symlinks
+export PATH
+
 export EDITOR=vim
 export EC2_HOME=$HOME/src/ec2-api-tools-1.3-30349
 export EC2_AMITOOL_HOME=$HOME/src/ec2-ami-tools-1.3-26357
@@ -115,6 +118,7 @@ fi
 [[ -e /usr/local/lib/python2.7 ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
 export PYTHONSTARTUP=$HOME/.pythonrc
 
+##
 # pip zsh completion start
 function _pip_completion {
   local words cword
@@ -126,4 +130,4 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip
 # pip zsh completion end
-
+##
