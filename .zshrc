@@ -95,9 +95,8 @@ path+=/Users/ted/src/ec2-api-tools-1.3-30349/bin
 path+=/Users/ted/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 path+=/Users/ted/local/gsutil
-[[-e /usr/local/lib/wxPython/bin]] && path+=/usr/local/lib/wxPython/bin
+[[ -e /usr/local/lib/wxPython/bin ]] && path+=/usr/local/lib/wxPython/bin
 export PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
-export path
 export EDITOR=vim
 export EC2_HOME=$HOME/src/ec2-api-tools-1.3-30349
 export EC2_AMITOOL_HOME=$HOME/src/ec2-ami-tools-1.3-26357

@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/ted/code/gds/xgds_isru/submodules/xgds_notes/vendor/django-taggit/taggit'
-let g:netrw_dirhist_2='/Users/ted/code/geocam/geocamResponderMaps/apps/responderMaps'
-let g:netrw_dirhist_3='/Users/ted/code/tourify'
