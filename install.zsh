@@ -1,4 +1,4 @@
-#!/bin/zsh +x
+#!/bin/zsh
 
 ###
 # Install symlinks to the files in this repo into the current user's $HOME
