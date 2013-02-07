@@ -26,7 +26,7 @@ echo "Proceed?  (type okeydoke)"
 read proceed
 [[ $proceed != "okeydoke" ]] && exit 1
 
-for file in $( find -type f $REPO_DIR |grep -v "$exclude_pattern" );
+for file in $( find $REPO_DIR  -type f | grep -v "$exclude_pattern" );
 do;
     #echo sed -e \"s:$REPO_DIR::\"
     relpath=`echo $file | sed -e "s:$REPO_DIR::" `
