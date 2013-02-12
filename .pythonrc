@@ -2,10 +2,14 @@ import readline
 import rlcompleter
 import os, atexit
 import sys
-#readline.parse_and_bind ("bind ^I rl_complete")
-readline.parse_and_bind ("tab: complete")
+if 'libedit' in readline.__doc__:
+    # Some versions of Mac os comes with a libedit-readline compatibility shim.
+    # Instead of normal readline.  These need a different binding string.
+    readline.parse_and_bind ("bind ^I rl_complete")
+else:
+    readline.parse_and_bind ("tab: complete")
 
-historyPath = os.path.expanduser("/home/ted/.pyhistory")
+historyPath = os.path.expanduser("~/.pyhistory")
 
 def save_history(historyPath=historyPath):
     import readline
@@ -17,10 +21,11 @@ if os.path.exists(historyPath):
 atexit.register(save_history)
 
 #sys.path.insert(0, '/usr/local/google_appengine/lib/fancy_urllib')
-extra_paths = ['/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages']
+extra_paths = [
+    os.path.expanduser('~/local/src/libkml-1.2.0/build/lib/python2.7/site-packages'),
+]
 for path in extra_paths:
     if os.path.exists(path):
         sys.path.insert(0, path)
 del extra_paths, path
 del os, atexit, readline, rlcompleter, save_history, historyPath, sys
-
