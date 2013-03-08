@@ -96,6 +96,7 @@ path+=$HOME/src/ec2-ami-tools-1.3-30349/bin
 path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 path+=$HOME/local/gsutil
 path+=/usr/local/lib/wxPython/bin
+path+=/usr/local/share/npm/bin
 PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
 path=($^path(-/N)) # filter out any paths that don't exists, or aren't directories/symlinks
 export PATH
@@ -115,7 +116,8 @@ fi
 #source $HOME/.eucalyptus/eucarc # was for nebula
 
 [[ -e /Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages ]] && export PYTHONPATH="/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH"
-[[ -e /usr/local/lib/python2.7 ]] && export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
+[[ -e /usr/local/lib/python2.7 ]] && PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
+export PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 ##
