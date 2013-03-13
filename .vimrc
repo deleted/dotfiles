@@ -1,4 +1,5 @@
 syn on
+call pathogen#infect()
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -12,8 +13,9 @@ set wildignore=*.o,*~,*.pyc,*.swp,*.swo
 set listchars=eol:$,tab:->,trail:.,
 colorscheme elflord
 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
 
 " Key mappings to quickly maximize windows
 map <C-J> <C-W>j<C-W>_
