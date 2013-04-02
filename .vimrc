@@ -6,6 +6,8 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 
+set modelines=5
+
 set ignorecase
 
 set wildignore=*.o,*~,*.pyc,*.swp,*.swo
@@ -14,6 +16,7 @@ set listchars=eol:$,tab:->,trail:.,
 colorscheme elflord
 
 call pathogen#infect()
+filetype plugin indent on
 "call pathogen#helptags()
 "call pathogen#runtime_append_all_bundles()
 
