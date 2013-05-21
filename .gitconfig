@@ -5,7 +5,8 @@
 
 [user]
 	name = Ted Scharff
-    email = e.b.scharff@nasa.gov
+    #email = e.b.scharff@nasa.gov
+    email = ted.scharff@gmail.com
 
 [color]
     diff = auto
