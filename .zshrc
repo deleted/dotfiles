@@ -45,8 +45,8 @@ setopt autocd
 
 #Prompt Stuff
 setopt PROMPT_SUBST
-#export PS1="%m:%~>"
-export PS1="z|%~>"
+export PS1="%m:%~>"
+#export PS1="z|%~>"
 # Prompt themes!
 #autoload -U promptinit
 #promptinit
