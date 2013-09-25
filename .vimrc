@@ -6,6 +6,8 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 
+set cm=blowfish "strong crypto
+
 set modelines=5
 
 set ignorecase
