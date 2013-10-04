@@ -6,7 +6,10 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 
-set cm=blowfish "strong crypto
+"if v:version >= 7.3
+if exists("&cm")
+    set cm=blowfish "strong crypto
+endif
 
 set modelines=5
 
