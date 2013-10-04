@@ -31,6 +31,7 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:${PATH}
 fi
 
+export EDITOR=vim
 
 #git branch appended to path  
 BLUE1="\[\033[0;34m\]"
@@ -47,3 +48,6 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+if [ -a $HOME/.profile ]; then
+    source $HOME/.profile
+fi
