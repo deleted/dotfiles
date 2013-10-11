@@ -134,6 +134,6 @@ compctl -K _pip_completion pip
 # pip zsh completion end
 ##
 
-if [ -f $HOME/.profile ]; then
-    source $HOME/.profile
+if [ -f $HOME/.local_profile ]; then
+    source $HOME/.local_profile
 fi

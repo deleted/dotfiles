@@ -48,6 +48,6 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-if [ -a $HOME/.profile ]; then
-    source $HOME/.profile
+if [ -a $HOME/.local_profile ]; then
+    source $HOME/.local_profile
 fi
