@@ -1,5 +1,4 @@
 syn on
-call pathogen#infect()
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -22,8 +21,8 @@ colorscheme elflord
 
 call pathogen#infect()
 filetype plugin indent on
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 
 " Key mappings to quickly maximize windows
 map <C-J> <C-W>j<C-W>_
