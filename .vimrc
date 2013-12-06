@@ -32,6 +32,8 @@ au BufReadCmd *.kmz call zip#Browse(expand("<amatch>")) " open kmz as zip files
 au BufRead,BufNewFile *.pde set filetype=arduino
 au FileType arduino setl sw=2 sts=2 et
 
+au BufRead,BufNewFile *.py set filetype=python
+
 " After shifting a visual block, select it again
 vnoremap < <gv
 vnoremap > >gv
