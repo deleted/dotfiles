@@ -13,6 +13,7 @@ DEST_DIR=$HOME
 excludes=(
     "\.git.*"
     "install\.zsh"
+    "etc/*"
 )
 # OR-together the subpatterns
 exclude_pattern="\(${(j:\|:)excludes}\)"
