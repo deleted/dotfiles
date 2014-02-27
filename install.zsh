@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 ## Install critical packages
-which apt-get && sudo apt-get install vim git ack-grep
+which apt-get && sudo apt-get install zsh vim git ack-grep -y
 
 ###
 # Install symlinks to the files in this repo into the current user's $HOME
