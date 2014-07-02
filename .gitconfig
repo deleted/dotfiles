@@ -18,3 +18,5 @@
 	excludesfile = /Users/ted/.gitignore.global
 [push]
 	default = tracking
+[branch]
+    autosetuprebase = always # git pull --rebase by default
