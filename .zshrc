@@ -117,6 +117,7 @@ fi
 
 [[ -e /Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages ]] && export PYTHONPATH="/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH"
 [[ -e /usr/local/lib/python2.7 ]] && PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
+[[ -e /usr/local/lib/python2.7/dist-packages ]] && PYTHONPATH="/usr/local/lib/python2.7/dist-packages:$PYTHONPATH"
 export PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
 
@@ -137,3 +138,4 @@ compctl -K _pip_completion pip
 if [ -f $HOME/.local_profile ]; then
     source $HOME/.local_profile
 fi
+
