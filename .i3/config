@@ -9,8 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-#set $mod Mod4
+#set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -26,6 +26,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+#start a browser window
+bindsym $mod+b exec chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -86,6 +89,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# move workspaces to different displays
+bindsym $mod+x move workspace to output right
 
 # switch to workspace
 bindsym $mod+1 workspace 1
