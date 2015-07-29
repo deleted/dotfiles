@@ -53,6 +53,26 @@ export PS1="%m:%~>"
 #autoload -U colors; colors
 #export PS1="${fg[green]%}%~%{$reset_color%}>"
 
+# RPROMPT: Show git branch info on the right 
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+  fi
+}
+RPROMPT=$'$(vcs_info_wrapper)'
+
 # Edit the comand line by hitting esc-v
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -88,6 +108,9 @@ alias ack="nocorrect ack"
 alias git="nocorrect git"
 unsetopt correct_all # just disable all of them.  this feature is kind of annoying
 
+# stimpy
+alias cowsay="cowsay -f stimpy"
+
 # All things pathy
 path+=$ANDROID
 path+=$ANDROID/tools
@@ -99,12 +122,16 @@ path+=$HOME/local/gsutil
 path+=/usr/local/lib/wxPython/bin
 path+=/usr/local/share/npm/bin
 PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
+path+=$HOME/projects/cosmogia/dev_tools/bin
+
 path=($^path(-/N)) # filter out any paths that don't exists, or aren't directories/symlinks
 export PATH
 
 export EDITOR=vim
 export EC2_HOME=$HOME/src/ec2-api-tools-1.3-30349
 export EC2_AMITOOL_HOME=$HOME/src/ec2-ami-tools-1.3-26357
+
+# Java
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export CLASSPATH=$HOME/android/lib:.
 
@@ -113,8 +140,6 @@ if [[ -d $ANDROID/tools ]]; then
         do CLASSPATH+=:$jar
     done
 fi
-
-#source $HOME/.eucalyptus/eucarc # was for nebula
 
 [[ -e /Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages ]] && export PYTHONPATH="/Users/ted/local/src/libkml-1.2.0/build/lib/python2.7/site-packages:$PYTHONPATH"
 [[ -e /usr/local/lib/python2.7 ]] && PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
