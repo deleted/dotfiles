@@ -121,6 +121,7 @@ path+=/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 path+=$HOME/local/gsutil
 path+=/usr/local/lib/wxPython/bin
 path+=/usr/local/share/npm/bin
+path+=/usr/sbin
 PATH=$HOME/local/bin:/usr/local/bin:/opt/local/bin:$PATH
 path+=$HOME/projects/cosmogia/dev_tools/bin
 
