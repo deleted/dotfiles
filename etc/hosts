@@ -10,5 +10,4 @@
 ::1             localhost
 fe80::1%lo0	localhost
 
-# My Linode Server
 173.230.145.33 hertzdonut
