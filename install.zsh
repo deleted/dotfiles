@@ -54,4 +54,7 @@ done;
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-
+# create controlmasters directory if it does not exist
+if ! [[ -e $HOME/.ssh/controlmasters ]]; then
+    mkdir $HOME/.ssh/controlmasters
+fi
