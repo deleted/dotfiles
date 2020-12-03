@@ -51,3 +51,4 @@ parse_git_branch() {
 if [ -a $HOME/.local_profile ]; then
     source $HOME/.local_profile
 fi
+
